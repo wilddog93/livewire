@@ -1,4 +1,9 @@
 <div>
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="card mb-2">
         <div class="card-header">Update your tweets!</div>
         <div class="card-body">
