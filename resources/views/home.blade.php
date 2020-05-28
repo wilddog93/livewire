@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md-8">
-            @livewire('counter')
+            <livewire:tweets.index>
         </div>
     </div>
 </div>
