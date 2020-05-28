@@ -28,7 +28,7 @@ class Index extends Component
 
     public function render()
     {
-        $tweets = Tweet::latest()->paginate($this->perPage);
+        $tweets = Tweet::with('user')->latest()->paginate($this->perPage);
 
         return view('livewire.tweets.index', compact('tweets'));
     }

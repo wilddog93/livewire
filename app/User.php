@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tweet::class);    
     }
+
+    public function avatar($size = 200)
+    {
+        return $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $this->email ) ) ) . "?d=mp&s=" . $size;
+    }
 }
