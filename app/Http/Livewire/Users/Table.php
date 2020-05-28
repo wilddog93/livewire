@@ -22,7 +22,7 @@ class Table extends Component
                     ->orWhere('username', 'like', "%$this->query%")
                     ->orWhere('email', 'like', "%$this->query%")
                     ->orWhere('occupation', 'like', "%$this->query%")
-                    ->latest()
+                    ->orderBy('name', 'asc') //or use latest() and first()
                     ->paginate($this->perPage);
 
         $this->page > $users->lastPage() ? $this->page = $users->lastPage() : true;
