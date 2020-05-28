@@ -10,7 +10,16 @@ class Index extends Component
 {
     use WithPagination; // ->class ini di livewire untuk menghilangkan reload
 
+    public $tweetId;
+
     public $perPage = 10;
+
+    public $listeners = ['tweetAdded'];
+
+    public function tweetAdded()
+    {
+        
+    }
 
     public function loadMore()
     {
