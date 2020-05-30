@@ -18,4 +18,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::livewire('users/table', 'users.table')->layout('layouts.app')->name('users');
+Route::livewire('users/table', 'users.table')->layout('layouts.app', ['title' => 'Users Data'])->name('users');
+
+Route::livewire('products', 'products.index')->layout('layouts.app', ['title' => 'Products'])->name('products');
