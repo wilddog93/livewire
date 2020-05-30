@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $this->email ) ) ) . "?d=mp&s=" . $size;
     }
+
+    public function carts()
+    {
+        return $this->belongsToMany(Product::class, 'carts', 'user_id', 'product_id'); //relasi many to many
+    }
 }
