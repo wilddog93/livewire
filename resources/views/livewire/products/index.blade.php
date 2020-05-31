@@ -9,9 +9,9 @@
                         <div>
                             <sup>Rp</sup> {{ number_format($product->price) }}
                         </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary btn-sm">Add To Cart</button>
-                        </div>
+                        @auth
+                            <livewire:carts.button :product="$product">
+                        @endauth
                     </div>
                 </div>
             </div>
